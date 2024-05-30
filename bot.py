@@ -155,7 +155,7 @@ def create_session(serialized_history=None):
         memory=memory
     )
 
-    print(f"Chat Session created")
+    print("Chat Session created")
     return conversation
 
 
