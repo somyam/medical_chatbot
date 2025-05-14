@@ -322,7 +322,7 @@ def create_app():
             user_uuid = str(uuid.uuid4())  # Generate UUID on server if not found
             session['userUuid'] = user_uuid
             resp = make_response(render_template('index.html', user_uuid=user_uuid))
-            resp.set_cookie('userUuid', user_uuid)
+            resp.set_cookie('userUuid', user_uuid, secure=True, httponly=True, samesite='Lax')
             return resp
         return render_template('index.html', user_uuid=user_uuid)
 
